@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import api from '../../services/api';
 
 // import { Container } from './styles';
 
 export default class Repository extends Component {
+  static PropTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        repository: PropTypes.string,
+      }),
+    }).isRequired,
+  };
+
   // eslint-disable-next-line react/state-in-constructor
   state = {
     repository: {},
